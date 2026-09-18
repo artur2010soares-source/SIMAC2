@@ -1,0 +1,74 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding: 22px 28px 60px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.screen--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.screen__stage {
+  height: 560px;
+}
+
+.screen__stage-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.screen__full {
+  grid-column: 1 / -1;
+}
+
+.screen__stage--tall {
+  height: 680px;
+}
+
+.screen__side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.screen--single {
+  max-width: 900px;
+}
+
+.screen--presentation .screen__stage {
+  height: 72vh;
+}
+
+@media (max-width: 1100px) {
+  .screen--split {
+    grid-template-columns: 1fr;
+  }
+  .screen__stage,
+  .screen__stage--tall {
+    height: 420px;
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-main {
+    padding: 16px 14px 40px;
+  }
+  .screen__stage,
+  .screen__stage--tall {
+    height: 340px;
+  }
+}

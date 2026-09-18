@@ -1,0 +1,41 @@
+.cabin-panel__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cabin-panel__sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+
+.cabin-panel__explainer {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+
+.cabin-panel__explainer--atencao {
+  color: var(--amber);
+  border-color: rgba(255, 182, 72, 0.4);
+  background: var(--amber-soft);
+}
+
+.cabin-panel__explainer--critico {
+  color: var(--red);
+  border-color: rgba(255, 77, 106, 0.5);
+  background: var(--red-soft);
+}
+
+@media (max-width: 480px) {
+  .cabin-panel__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+}

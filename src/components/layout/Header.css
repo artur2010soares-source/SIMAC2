@@ -1,0 +1,121 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 28px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 10, 20, 0.7);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  flex-wrap: wrap;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--void);
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  box-shadow: 0 0 20px rgba(42, 217, 255, 0.35);
+  flex-shrink: 0;
+}
+
+.header__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.header__title sup {
+  color: var(--cyan);
+}
+
+.header__subtitle {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--text-2);
+  max-width: 360px;
+}
+
+.header__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.header__status-text {
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  color: var(--text-2);
+}
+
+.header__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: dot-blink 2s ease-in-out infinite;
+}
+.header__dot--green {
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+}
+.header__dot--amber {
+  background: var(--amber);
+  box-shadow: 0 0 8px var(--amber);
+}
+.header__dot--red {
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
+  animation-duration: 0.8s;
+}
+
+@keyframes dot-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.header__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .header {
+    padding: 12px 16px;
+  }
+  .header__subtitle {
+    display: none;
+  }
+  .header__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

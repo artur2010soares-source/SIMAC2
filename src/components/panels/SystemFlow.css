@@ -1,0 +1,130 @@
+.system-flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 12px 0 6px;
+}
+
+.system-flow__segment {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.system-flow__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  flex-shrink: 0;
+  width: 92px;
+}
+
+.system-flow__node span {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--cyan);
+  background: rgba(42, 217, 255, 0.08);
+}
+
+.system-flow__node p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--text-2);
+}
+
+.system-flow__line {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: var(--line);
+  min-width: 20px;
+  overflow: visible;
+}
+
+.system-flow__dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+  transform: translateY(-50%);
+  animation: flow-move 2.4s linear infinite;
+}
+
+@keyframes flow-move {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.system-flow__caption {
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .system-flow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .system-flow__segment {
+    flex-direction: column;
+    width: 100%;
+  }
+  .system-flow__line {
+    width: 2px;
+    height: 24px;
+    margin-left: 45px;
+  }
+  .system-flow__dot {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    animation: flow-move-vertical 2.4s linear infinite;
+  }
+}
+
+@keyframes flow-move-vertical {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}

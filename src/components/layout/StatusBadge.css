@@ -1,0 +1,40 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.status-badge--normal {
+  background: var(--green-soft);
+  color: var(--green);
+  border: 1px solid rgba(52, 229, 168, 0.4);
+}
+
+.status-badge--atencao {
+  background: var(--amber-soft);
+  color: var(--amber);
+  border: 1px solid rgba(255, 182, 72, 0.4);
+}
+
+.status-badge--critico {
+  background: var(--red-soft);
+  color: var(--red);
+  border: 1px solid rgba(255, 77, 106, 0.5);
+  animation: badge-blink 1s ease-in-out infinite;
+}
+
+@keyframes badge-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
